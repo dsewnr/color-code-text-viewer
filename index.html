@@ -16,7 +16,7 @@
 				$('textarea').change(function(){
 					$('div').html(
 						$(this).val().replace(/(#[\da-fA-F]{6})/g,function(p1){
-							return '<span style="font-weight: bold;">'+p1+'</span>'+svg(p1);
+							return '<span style="font-weight: bold;font-style:italic;">'+p1+'</span>'+svg(p1);
 						}).replace(/\n/g, '<br>')
 					);
 				});
