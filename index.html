@@ -10,10 +10,13 @@
 		<script src="js/jquery.slim.min.js"></script>
 		<script>
 			$(function(){
+				function svg(code) {
+					return '<svg width="14" height="14" style="margin-left:1px;margin-right:1px;"><rect x="0" y="0" rx="0" ry="0" width="14" height="14" style="fill:' + code +  ';stroke:black;stroke-width:1;opacity:1;" />Sorry, your browser does not support inline SVG.</svg>';
+				}
 				$('textarea').change(function(){
 					$('div').html(
 						$(this).val().replace(/(#[\da-fA-F]{6})/g,function(p1){
-							return '<span style="color:' + p1 +  ';font-weight: bold;">'+p1+'</span>';
+							return '<span style="font-weight: bold;">'+p1+'</span>'+svg(p1);
 						}).replace(/\n/g, '<br>')
 					);
 				});
